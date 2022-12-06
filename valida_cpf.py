@@ -7,9 +7,9 @@ cpf = input('Digite o CPF: ')
 cpf = re.sub(r'[^0-9]',
              '',
              cpf)
-verificar = cpf[0] * len(cpf)
+entrada_sequencial = cpf[0] * len(cpf)
 print('=-' * 40)
-if cpf.isnumeric() and len(cpf) == 11 and verificar != cpf:
+if cpf.isnumeric() and len(cpf) == 11 and entrada_sequencial != cpf:
     cpf_nove = cpf[:9]
     soma_1 = 0
     multi_1 = 10
