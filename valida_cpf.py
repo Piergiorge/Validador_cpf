@@ -15,7 +15,7 @@ if cpf.isnumeric() and len(cpf) == 11:
     resto_1 = soma_1 % 11
     if resto_1 > 9:
         resto_1 = 0
-    cpf_dez = cpf_nove + str(resto_1)
+    cpf_dez = cpf[:10]
     soma_2 = 0
     multi_2 = 11
     for numero in cpf_dez:
