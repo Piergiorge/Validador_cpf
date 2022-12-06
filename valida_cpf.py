@@ -2,9 +2,14 @@
 Validador de CPF
 Usa o algoritmo da receita federal para verificar se um determinado CPF é válido
 """
-cpf = '746.824.890-70'.replace('.', '').replace('-', '')
+import re
+cpf = input('Digite o CPF: ')
+cpf = re.sub(r'[^0-9]',
+             '',
+             cpf)
+verificar = cpf[0] * len(cpf)
 print('=-' * 40)
-if cpf.isnumeric() and len(cpf) == 11:
+if cpf.isnumeric() and len(cpf) == 11 and verificar != cpf:
     cpf_nove = cpf[:9]
     soma_1 = 0
     multi_1 = 10
@@ -24,5 +29,5 @@ if cpf.isnumeric() and len(cpf) == 11:
     cpf_novo = cpf_nove + str(resto_1) + str(resto_2)
     print(f'O cpf {cpf} é válido!' if cpf_novo == cpf else f'O cpf {cpf} não é válido!')
 else:
-    print('Input inválido! Apenas 11 números!')
+    print('Input inválido! Digite 11 números!')
 print('=-' * 40)
