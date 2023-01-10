@@ -1,9 +1,16 @@
 import random
+"""
+This code generates a random CPF (Brazilian national identification number) by using the criar_cpf
+function to create a string of 9 random digits and then uses the gerador_cpf
+function to generate the 9th and 10th digit of the CPF by performing some
+calculation using the first 9 or 10 digits of the CPF number.
 
-
+The code then concatenates the digits to create a full 11-digit CPF number
+and prints it in a formatted way.
+"""
 def criar_cpf():
     """
-    Cria um CPF aleatório com 9 dígitos:return:
+    Function to create a string of 9 random digits
     """
     string_cpf = ''
     for i in range(9):
@@ -14,7 +21,8 @@ def criar_cpf():
 
 def gerador_cpf(temp_cpf, contador):
     """
-    Função que cria o décimo e décimo primeiro dígito do CPF
+    Function to generate the 9th and 10th digit of the CPF by performing some
+    calculation using the first 9 or 10 digits of the CPF number
     """
     soma = 0
     for num in temp_cpf:
